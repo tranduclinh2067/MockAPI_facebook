@@ -1,0 +1,235 @@
+$white: #fff;
+$white-25: #f0f2f5;
+$white-30: #dddfe2;
+$white-40: #b4b4b4;
+$white-55: #90949c;
+
+$black-25: #1c1e21;
+$black: #000;
+
+$light-blue: #1877f2;
+$light-green: #42b72a;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: SFProDisplay;
+    src: url(../font/FontsFree-Net-SFProDisplay-Regular.ttf);
+  }
+
+body {
+    background: $white-25;
+    font-size: 16px;
+    font-family: SFProDisplay;
+}
+
+$COL_12: percentage(100/1200);
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: $COL_12 * $i;
+    }
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0 15px 0 15px;
+}
+
+.row {
+    display: flex;
+    &::after {
+        content: "";
+        clear: both;
+    }
+  }
+
+.facebook-interface {
+    justify-content: center;
+    height: 650px;
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: normal;
+        color: $black-25;
+    }
+}
+
+.ctr-img {
+    padding: 140px 0 0;
+
+    img {
+        width: 300px;
+        margin-left: -26px;
+    }
+}
+
+.frames-click {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 90%;
+}
+
+.hover-click {
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.ctr-form {
+    height: 310px;
+    background:$white;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin: 110px 0 0;
+    padding: 20px 0 28px;
+
+    .input-space {
+        padding: 10px 0;
+
+        input {
+
+            font-size: 1.05rem;
+            
+        }
+    }
+    
+    #input-account, #input-password {
+        @extend .frames-click;
+
+        font-size: 17px;
+        padding-left: 6px;
+        border: thin solid $white-30;
+        border-radius: 6px;
+        outline: none;
+
+        &::placeholder {
+            color: $white-55;
+            
+        }
+    }
+    
+    hr {
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+}
+
+.ctr-login, .ctr-create {
+    margin: 10px 0;
+    button {
+        @extend .frames-click;
+
+        border: none;
+        border-radius: 6px;
+        background: $light-blue;
+        color: $white;
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.forgot-pwd {
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: $light-blue;
+        font-size: 0.975rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.ctr-create {
+    display: block;
+    margin: 0 auto;
+
+    width: 50% !important;
+    height: 48px !important;
+
+    button {
+        background: $light-green;
+        font-size: 1.0625rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.ctr-title-page {
+    margin: 28px;
+    word-spacing: 2px;
+    text-align: center;
+    font-size: 0.9375rem;
+    a {
+        color: $black-25;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.ctr-footer {
+    display: block;
+    margin: 20px auto;
+
+    a {
+        text-decoration: none;
+        font-size: 0.8125rem;
+        color: $white-55;
+        display: inline-block;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    .ctr-language {
+        a {
+            
+            &:not(:last-child) {
+                padding-right: 10px;
+            }
+
+            &:nth-child(1) {
+                color: $black-25;
+            }
+        }
+    }
+
+    hr {
+        background: #dddfe2;
+    }
+
+    .ctr-pages {
+        a {
+
+            &:not(:last-child) {
+                padding-right: 16px;
+            }
+        }
+    }
+
+    .ctr-copyright {
+        font-size: 0.6875rem;
+        p {
+            padding: 20px 0 0;
+        }
+    }
+}
